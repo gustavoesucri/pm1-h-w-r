@@ -1,34 +1,29 @@
-import { useState as state } from "react";
+import { useState as state, useState } from "react";
 export default function HelloWorld(){
     // A função sempre retorna um código .jsx para ser renderizado na Tela. 
 
-    let [name, setName] = state('');  // O primeiro é a variável, o segundo é o método.
-
+    let [name, setName] = useState('');  // O primeiro é a variável, o segundo é o método.
+    let [message, setMessage] = useState('');
     // Se quer usar uma variável na tela, tem que usar o state.
     // Se for no backend, melhor não usar, que é uma coisa a menos para o React monitorar.
 
-    const handleHelloWorld = (event) => {
-        console.log(event);
-    };
+    const handleHelloWorld = () => setMessage(`Hello world, ${name}!`);
 
     const handleClear = () => {
-        console.log(arguments)
+        setMessage('');
         setName('');
     };
 
     const handleChangeInput = (event) => {
         setName(event.target.value);
-        console.log('name: ', name);
     };
 
-
     const handleKeyInput = (event) => {
-        console.log(event);
         if(event.key === 'Escape'){
-            setName('');
+            handleClear();
         }
         if(event.key === 'Enter'){
-            setName('');
+            handleHelloWorld();
         }
     }
 
@@ -39,7 +34,8 @@ export default function HelloWorld(){
         <button onClick={handleHelloWorld}>Hello World</button>
         <button onClick={handleClear}>Limpar</button>
         {/* {name ? <p>Hello world, {name}!</p> : undefined} */}
-        {name && <p>Hello world, {name}!</p>}
+        {/* {name && <p>Hello world, {name}!</p>} */}
+        {message && <p>{message}</p>}
         </section>
     )
 }
