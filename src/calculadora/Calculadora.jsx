@@ -50,3 +50,10 @@ export default function Calculadora(){
 //             {message && <p>{message}</p>}
 //             </div>
 //             </section> */}
+
+
+
+// Crie uma página web que faça operações básicas de soma, subtração, multiplicação e divisão e que
+// contenha dois campos para informar os valores e uma opção para selecionar a operação. Ainda deve
+// conter dois botões: Calcular, que realizará a operação, apresentando o resultado em um parágrafo e
+// Limpar que apagará os valores dos campos e o resultado.
