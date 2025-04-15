@@ -1,0 +1,21 @@
+.home {
+    list-style: none;
+    padding-inline-start: 0;
+    gap: 1rem;
+    margin: auto;
+}
+
+.home li {
+    border: 1px solid yellow;
+    padding: 1rem;
+    margin: 10px;
+}
+
+.home li a {
+    color: yellow;
+    text-decoration: none;
+}
+
+.home li a:hover {
+    font-weight: bolder;
+}
